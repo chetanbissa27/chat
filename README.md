@@ -1,4 +1,4 @@
-# chatterbox
+# chat
 one to one chat with buddies.You can send emotions as well
 
 open one terminal and start rails server</br>
