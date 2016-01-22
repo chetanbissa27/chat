@@ -1,0 +1,13 @@
+<li id="<%= 'notification_' + conversation.id.to_s %>" data-id="<%= conversation.id %>" class="callback"> <a href="javascript:void(0);">
+  <% image = message_interlocutor(message).image_url %>
+  <% if !image.blank? %>
+      <img src="<%= image %>" class="message-avatar" />
+  <% else %>
+      <img src="http://placehold.it/50x50" class="message-avatar"/>
+  <% end %>
+  <div class="message">
+    <span class="message-sender"> <%= message_interlocutor(message).name %> </span>
+    <span class="message-time"> <%= message.created_at.strftime("%d %b  %Y at %I:%M%p") %> </span>
+    <span class="message-body truncate"> <%= message.body %> </span>
+  </div>
+</a> </li>

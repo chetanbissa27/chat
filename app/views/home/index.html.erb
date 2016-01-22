@@ -1,0 +1,46 @@
+<!-- Push menu div area starts-->
+<div class="mp-pusher" id="mp-pusher">
+  <!-- mp-menu -->
+  <%= render 'layouts/navigation' %>
+
+  <!-- Main Search area Starts-->
+  <div id="top" class="masthead" role="main">
+    <div class="fade-black-transp"></div>
+    <div class="container chatter-window">
+      <% if current_user %>
+      <div class="col-md-4 user-window nopadding" >
+        <ul class="nav nav-pills nav-stacked ">
+          <% unless @records.blank? %>
+            <% @records.each do |record| %>
+              <li class="user-list">
+                <a title="Contact me" href="#" class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= record.id%>">
+                  <i class="fa fa-comments"></i> <strong><span><%= record.name %></span></strong>
+                  <span class="badge pull-right" id="user_<%= record.id %>_nofity_count"></span>
+                </a>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-8 nopadding" id="user-chat-window">
+        
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Main Search area Ends -->
+
+  <!--footer area starts-->
+  <%#= render 'layouts/footer' %>
+  <!--footer area Ends-->
+
+</div>
+
+<% if flash[:notice] %>
+  <div id="alert_div" class="alert alert-success" style="display: none;text-align: center;top:0;position: fixed;z-index:1000;width: 100%;padding: 5px;">
+    <span id="alert_msg"><%= flash[:notice] %></span>
+  </div>
+  <script type="application/javascript">
+    $("#alert_div").slideDown(500).fadeTo(3000,0.8).slideUp(500);
+  </script>
+<% end%>

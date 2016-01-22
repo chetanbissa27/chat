@@ -1,0 +1,66 @@
+<nav class="navbar navbar-notify navbar-default ">
+  <div class="navbar-inner">
+    <div class="container navbar-container">
+      <div class="navbar-header">
+        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a href="/" class="navbar-brand"><img src="" alt="logo.png"/></a> </div>
+      <div class="navbar-main-header"><div class="navbar-collapse collapse navbar-account" id="navbar">
+        <ul class="nav navbar-nav navbar-right account-area">
+          <li class="notify">
+            <% unless @user_notifications.blank? %>
+                <a class="dropdown-toggle" data-toggle="dropdown" title="Mails" href="#">
+                  <i class="icon fa fa-bell"></i> <span class="badge" id="notify_count"><%= @user_notifications.length %></span>
+                </a>
+                <!--Messages Dropdown-->
+                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages" id="notifications">
+                  <% @user_notifications.each do |notification| %>
+                      <% message = notification.messages.last %>
+                      <li id="<%= 'notification_' + notification.id.to_s %>" data-id="<%= notification.id %>" class="callback"> <a href="javascript:void(0);">
+                        <% image = message_interlocutor(message).image_url %>
+                        <% if !image.blank? %>
+                            <img src="<%= image %>" class="message-avatar" />
+                        <% else %>
+                            <img src="http://placehold.it/50x50" class="message-avatar"/>
+                        <% end %>
+                        <div class="message">
+                          <span class="message-sender"> <%= message_interlocutor(message).name %> </span>
+                          <span class="message-time"> <%= message.created_at.strftime("%d %b  %Y at %I:%M%p") %> </span>
+                          <span class="message-body truncate"> <%= message.body %> </span>
+                        </div>
+                      </a> </li>
+                      <script>
+                          $("span.message-body").each(function() {
+                              $(this).html(($.emoticons.replace($("span.message-body").last().html())));
+                          });
+                      </script>
+                  <% end %>
+                </ul>
+            <% else %>
+                <a class="dropdown-toggle" data-toggle="dropdown" title="Mails" href="#">
+                  <i class="icon fa fa-bell"></i> <span class="badge" id="notify_count"></span>
+                </a>
+                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages" id="notifications">
+                </ul>
+            <% end %>
+            <!--/Messages Dropdown-->
+          </li>
+          <% if !current_user.blank?%>
+              <li class="dropdown user-det"> <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">
+                <% image = "" %>
+                <% image = current_user.image_url.blank? ? "/assets/defoult-img.png" : current_user.image_url.to_s + "?type=square"%>
+                <img src="<%= image %>" /> <span> <%= current_user.name.to_s.titleize %></span> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="/users/sign_out">Logout</a></li>
+                </ul>
+              </li>
+          <% else %>
+              <li><a tabindex="-1" href="/users/sign_in">Login</a></li>
+              <li><a tabindex="-1" href="/users/sign_up">Signup</a></li>
+          <% end %>
+
+        </ul>
+      </div></div>
+      <!--/.nav-collapse -->
+    </div>
+    </div>
+</nav>

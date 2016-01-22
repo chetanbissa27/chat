@@ -1,0 +1,41 @@
+<% PrivatePub.config[:server] = "http://127.0.0.1:9292/faye" %>
+<% publish_to "/chat" do %>
+var id = "<%= @conversation.id %>";
+var sender_id = "<%= @message.user.id %>";
+var receiver_id = $('meta[name=user-id]').attr("content");
+var receiver = '<%= @receiver.id %>';
+if((receiver == receiver_id)||(sender_id == receiver_id)) {
+    var chatbox = $("#chatbox_" + id + " .chatboxcontent");
+    if(chatbox.length>0) {
+        chatbox.append("<%= j render( partial: @message ) %>");
+        chatbox.scrollTop(chatbox[0].scrollHeight);
+    }
+    if($("p.message-body").length > 0)
+        $("p.message-body").last().html(($.emoticons.replace($("p.message-body").last().html())));
+    if (sender_id != receiver_id) {
+        chatBox.chatWith(id);
+        chatbox.children().last().removeClass("self").addClass("other");
+        if($('#chatbox_' + id + ' .chatboxcontent').css('display') == "none" || chatbox.length == 0) {
+            var nt = $("#notifications");
+            var user_notify_count = parseInt($("#user_"+ sender_id +"_nofity_count").html());
+            user_notify_count = isNaN(user_notify_count) ? 0 : user_notify_count;
+            var messager = '<%= message_interlocutor(@message).id %>';
+            if($("#notification_"+id).length > 0){
+              $("#notification_"+id).remove();
+            }
+            nt.prepend("<%= j render( partial: 'messages/notification', :locals => {:message => @message,:conversation => @conversation} ) %>");
+            $("#user_"+ sender_id +"_nofity_count").html(user_notify_count+$("#notifications li#notification_"+id).length);
+            $("#notify_count").html($("#notifications li").length);
+            $("span.message-body").last().html(($.emoticons.replace($("span.message-body").last().html())));
+        }
+        else {
+            chatBox.update_notifications(id);
+        }
+        chatBox.notify();
+        chatbox.scrollTop(chatbox[0].scrollHeight);
+    }
+//    alert($(".message-body").last().html())
+}
+
+<% end %>
+<%# PrivatePub.config[:server] = "http://127.0.0.1:9292/faye" %>

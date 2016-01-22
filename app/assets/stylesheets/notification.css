@@ -1,0 +1,128 @@
+﻿@-webkit-keyframes borderPulse{15% {opacity:1}
+    100%{-webkit-transform:scale(1.3);opacity:0}
+}
+@-moz-keyframes borderPulse{15% {opacity:1}
+    100%{-moz-transform:scale(1.3);opacity:0}
+}
+@-o-keyframes borderPulse{15% {opacity:1;}
+    100%{-o-transform:scale(1.3);opacity:0;}
+}
+@keyframes borderPulse{15% {opacity:1}
+    100%{-webkit-transform:scale(1.3);-moz-transform:scale(1.3);-ms-transform:scale(1.3);transform:scale(1.3);opacity:0}
+}
+@-webkit-keyframes pulse{0% {opacity:.5}
+    50% {opacity:1}
+    100% {opacity:.5}
+}
+@-moz-keyframes pulse{0% {opacity:.5}
+    50% {opacity:1}
+    100% {opacity:.5}
+}
+@-o-keyframes pulse{0% {opacity:.5;}
+    50% {opacity:1;}
+    100% {opacity:.5;}
+}
+@keyframes pulse{0% {opacity:.5}
+    50% {opacity:1}
+    100% {opacity:.5}
+}
+@-webkit-keyframes explode{100% {opacity:0;-webkit-transform:scale(3) rotate(30deg) translateY(60px)}
+}
+@-moz-keyframes explode{100% {opacity:0;-moz-transform:scale(3) rotate(30deg) translateY(60px)}
+}
+@-o-keyframes explode{100% {opacity:0;-o-transform:scale(3)rotate(30deg)translateY(60px);}
+}
+@keyframes explode{100% {opacity:0;-webkit-transform:scale(3) rotate(30deg) translateY(60px);-moz-transform:scale(3) rotate(30deg) translateY(60px);-ms-transform:scale(3) rotate(30deg) translateY(60px);transform:scale(3) rotate(30deg) translateY(60px)}
+}
+@-webkit-keyframes wave{5% {opacity:.6}
+    27%{-webkit-transform:scale(1.8);opacity:0}
+    100% {opacity:0}
+}
+@-moz-keyframes wave{5% {opacity:.6}
+    27%{-moz-transform:scale(1.8);opacity:0}
+    100% {opacity:0}
+}
+@-o-keyframes wave{5% {opacity:.6;}
+    27%{-o-transform:scale(1.8);opacity:0;}
+    100% {opacity:0;}
+}
+@keyframes wave{5% {opacity:.6}
+    27%{-webkit-transform:scale(1.8);-moz-transform:scale(1.8);-ms-transform:scale(1.8);transform:scale(1.8);opacity:0}
+    100% {opacity:0}
+}
+@-webkit-keyframes dropdownSlideInDown{0% {opacity:0;-webkit-transform:translateY(-20px)}
+    100%{-webkit-transform:translateY(0)}
+}
+@-moz-keyframes dropdownSlideInDown{0% {opacity:0;-moz-transform:translateY(-20px)}
+    100%{-moz-transform:translateY(0)}
+}
+@-o-keyframes dropdownSlideInDown{0% {opacity:0;-o-transform:translateY(-20px);}
+    100%{-o-transform:translateY(0);}
+}
+@keyframes dropdownSlideInDown{0% {opacity:0;-webkit-transform:translateY(-20px);-moz-transform:translateY(-20px);-ms-transform:translateY(-20px);transform:translateY(-20px)}
+    100%{-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}
+}
+@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg)}
+    100%{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes spin{0%{-moz-transform:rotate(0deg)}
+    100%{-moz-transform:rotate(360deg)}
+}
+@-o-keyframes spin{0%{-o-transform:rotate(0deg);}
+    100%{-o-transform:rotate(360deg);}
+}
+@keyframes spin{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}
+    100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}
+}
+.navbar.navbar-notify .navbar-inner .navbar-container{padding-left:10px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account{height:45px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account>div{display:inline-block;width:auto;vertical-align:top}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li{float:left;position:relative;height:45px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li.notify>a{position:relative;min-width:50px;height:45px;display:inline-block;border-top:3px solid rgba(255, 255, 255, 0);}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li>a:hover{text-decoration:none}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li>a .icon{display:block;font-size:16px;line-height:16px;text-align:center;-webkit-transition:line-height .3s ease;-moz-transition:line-height .3s ease;-o-transition:line-height .3s ease;transition:line-height .3s ease}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li>a .badge{position:absolute;top:6px;right:4px;padding:2px;cursor:pointer;background-color:#dd6308;width:18px;height:18px;box-shadow:1px 1px 0 #d74d54;-webkit-transition:top .3s ease;-moz-transition:top .3s ease;-o-transition:top .3s ease;transition:top .3s ease;font-size:10px;line-height:13px;}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li>a.blink i{-webkit-animation-delay:.05s;-moz-animation-delay:.05s;-o-animation-delay:.05s;animation-delay:.05s}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu{padding:0;min-width:240px;-webkit-animation-name:dropdownSlideInDown;-moz-animation-name:dropdownSlideInDown;-o-animation-name:dropdownSlideInDown;animation-name:dropdownSlideInDown;-webkit-animation-duration:.3s;-moz-animation-duration:.3s;-o-animation-duration:.3s;animation-duration:.3s;-webkit-border-radius:0 !important;-webkit-background-clip:padding-box !important;-moz-border-radius:0 !important;-moz-background-clip:padding !important;border-radius:0 !important;background-clip:padding-box !important}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li{background-color:#fff;border:0;padding:0 8px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li:hover{background-color:#eaeaea;}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li a{margin:0;font-size:12px;line-height:16px;padding:10px 2px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li a .progress{margin-bottom:0;margin-top:4px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li a:hover{background-color:#eaeaea;}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-header, .navbar .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-footer{-webkit-text-shadow:none;text-shadow:none;font-size:13px;font-weight:normal;text-transform:none;color:#262626}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-header{padding:0 10px;line-height:34px;margin-bottom:10px;border-bottom:1px solid #cecece}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-header a{line-height:34px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-header[class*="bordered-"]{border-bottom-width:3px;border-style:solid}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-header i{margin-right:5px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-footer{padding:8px 5px 8px 10px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-footer[class*="bordered-"]{border-top-width:3px;border-style:solid}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-footer a{display:inline-block;color:#999;padding:0}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu li.dropdown-footer .btn{margin-top:-3px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications{min-width:300px;padding-top:10px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li{border-bottom:1px solid #f3f3f3}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li .notification-icon{float:left}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li .notification-icon i{width:32px;height:32px;text-align:center;line-height:32px;margin-right:10px;font-size:15px;border-radius:50%}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li .notification-body{float:left}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li .notification-body .title{display:block;font-size:13px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li .notification-body .description{display:block;font-size:10px;color:#999}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li .notification-extra{float:right;text-align:right}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li .notification-extra i{font-size:14px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li .notification-extra .description{display:block;font-size:10px;color:#999}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li.dropdown-footer{background-color:#11a9cc;border-bottom:0;color:#fff}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li.dropdown-footer a{color:#fff}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-notifications li.dropdown-footer .weather-icon{margin-top:-7px;margin-left:5px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages{max-height:205px;overflow:auto;width:310px;box-shadow: 0 2px 40px rgba(0,0,0,.4);}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li{border-bottom:1px solid #E5E5E5}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li .message-avatar{max-width:42px;margin-right:6px;margin-top:5px;vertical-align:top;border:1px solid #e1e1e1;border-radius:50%;padding:1px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li .message{display:inline-block;position:relative;width:225px}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li .message span{display:block}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li .message-sender{font-size:13px;font-weight:600;}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li .message-time{position:absolute;top:0;right:0;font-size:11px;font-weight:600;color:#d74d54}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li .message-subject{margin-top:5px;color:#595959;font-size:12px;font-weight:600;}
+.navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages li .message-body{color:#333;max-height:35px;width:100%;-ms-text-overflow:ellipsis;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+.navbar.navbar-notify  .navbar-inner .navbar-main-header .navbar-account .account-area>li.notify.open>a{ -webkit-box-shadow:0 0px 24px 0px rgba(0,0,0,.4);-moz-box-shadow:0 0px 24px 0px rgba(0,0,0,.4);box-shadow:0 0px 24px 0px rgba(0,0,0,.4);border-top:3px solid #dd6308;}
+
+@media (max-width:767px) {
+    .navbar.navbar-notify .navbar-inner .navbar-main-header .navbar-account .account-area>li .dropdown-menu.dropdown-messages{position:absolute;right:0;}
+}
+
