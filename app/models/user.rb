@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   validates_presence_of :l_name, :message => "Last name can't be blank"
 
   devise :omniauthable, :omniauth_providers => [:facebook]
-  has_many :conversations, :foreign_key => :sender_id
   has_one :api_key
 
   def name
@@ -31,7 +30,19 @@ class User < ActiveRecord::Base
     user
   end
 
-  def notifications
-    Conversation.where("sender_id = ? or recipient_id = ?",self.id,self.id).includes(:messages).where("messages.is_read = false and user_id != ?",self.id)
+  #this function must return ActiveRecord::Relation
+  def conversations
+    Conversation.where("sender_id = ? or recipient_id = ?",self.id,self.id)
   end
+
+  def notifications
+    conversations.includes(:messages).where("messages.is_read = false and user_id != ?",self.id)
+  end
+
+  def get_users
+    User.where("users.id != #{self.id}").joins("left join conversations on (conversations.sender_id = users.id and conversations.recipient_id = #{self.id}) or
+          (conversations.sender_id = #{self.id} and conversations.recipient_id = users.id) left join messages on conversations.id = messages.conversation_id
+        and messages.user_id = users.id and messages.is_read = false").group("conversations.id").group("messages.user_id").select("users.*,count(messages.is_read) unread_count")
+  end
+
 end

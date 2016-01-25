@@ -15,7 +15,7 @@
               <li class="user-list">
                 <a title="Contact me" href="#" class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= record.id%>">
                   <i class="fa fa-comments"></i> <strong><span><%= record.name %></span></strong>
-                  <span class="badge pull-right" id="user_<%= record.id %>_nofity_count"></span>
+                  <span class="badge pull-right" id="user_<%= record.id %>_nofity_count"><%= record.unread_count.to_i > 0 ? record.unread_count.to_i : ""%></span>
                 </a>
               </li>
             <% end %>
