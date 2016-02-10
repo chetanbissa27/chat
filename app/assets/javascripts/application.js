@@ -21,5 +21,5 @@
 //= require modernizr.custom
 //= require private_pub
 //= require chat
-//= require users
 //= require home
+//= require users

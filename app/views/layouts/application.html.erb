@@ -18,6 +18,8 @@
 <audio id="chatAudio"><source src="/assets/bip.mp3" type="audio/mpeg"></audio>
 <% if current_user %>
     <%= subscribe_to "/chat" %>
+    <%= subscribe_to "/user-online" %>
+    <%= subscribe_to "/user-offline" %>
 <% end %>
 </body>
 </html>

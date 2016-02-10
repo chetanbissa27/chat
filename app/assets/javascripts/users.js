@@ -85,6 +85,15 @@ var ready = function () {
             return value + text +' ';
         });
     });
+
+    PrivatePub.subscribe('/user-online',function(data){
+        console.log(data);
+        $('li.user-list#pro-'+ data.message.id + ' a>i.status').removeClass('fa-circle-o').addClass('fa-check-circle');
+    });
+    PrivatePub.subscribe('/user-offline',function(data){
+        console.log(data);
+        $('li.user-list#pro-'+ data.message.id + ' a>i.status').removeClass('fa-check-circle').addClass('fa-circle-o');
+    });
 }
 
 $(document).ready(ready);
