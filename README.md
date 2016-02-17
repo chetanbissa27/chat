@@ -6,7 +6,7 @@
 <li> Send emotions</li>
 <li> Display number of unread messages from individual user and Display number users whose messages are unread</li>
 <li> Support real time online/offline status of user</li>
-</ul
+</ul>
 
 <b>Setup:<b></br>
 open one terminal and start rails server</br>
