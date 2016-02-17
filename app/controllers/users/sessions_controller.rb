@@ -9,9 +9,13 @@ class Users::SessionsController < Devise::SessionsController
   def publish_message
     if current_user && params[:action] == "create"
       PrivatePub.publish_to "/user-online",message:{:id => current_user.id}
+      current_user.is_online = true
+      current_user.save
       # PrivatePub.publish_to "/chat",message:"var selector = #{current_user.id} ; $('li.user-list#pro-'+ selector + ' a>i.status').removeClass('fa-circle-o').addClass('fa-check-circle');"
     else
       PrivatePub.publish_to "/user-offline",message:{:id => current_user.id}
+      current_user.is_online = false
+      current_user.save
       # PrivatePub.publish_to "/chat",message:"var selector = #{current_user.id}; $('li.user-list#pro-'+ selector + ' a>i.status').removeClass('fa-check-circle').addClass('fa-circle-o');"
     end
   end

@@ -14,7 +14,8 @@
             <% @records.each do |record| %>
               <li class="user-list" id="pro-<%= record.id %>">
                 <a title="Contact me" href="#" class="start-conversation" data-sid="<%= current_user.id %>" data-rip="<%= record.id%>">
-                  <i class="fa fa-circle-o status"></i> <strong><span><%= record.name %></span></strong>
+                  <% status = record.is_online ? "fa-check-circle" : "fa-circle-o" %>
+                  <i class="fa <%= status %> status"></i> <strong><span><%= record.name %></span></strong>
                   <span class="badge pull-right" id="user_<%= record.id %>_nofity_count"><%= record.unread_count.to_i > 0 ? record.unread_count.to_i : ""%></span>
                 </a>
               </li>
